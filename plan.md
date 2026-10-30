@@ -3,13 +3,12 @@ titulo: Plano de Carreira
 nome: Graziele Vasconcelos
 cargo: Platform Engineer / SRE
 resumo: Profissional em evolução para Platform Engineering/SRE, com foco em cloud, Kubernetes, infraestrutura como código e confiabilidade.
-atualizado: 2026-10-29
+atualizado: 2026-10-30
 ---
 
 # Plano de Carreira
 
 ## NOW
-**0–3 meses**
 
 - [ ] **001 · AWS Certified Cloud Practitioner**
   - tipo: Certificação
@@ -36,7 +35,6 @@ atualizado: 2026-10-29
   - evidência:
 
 ## NEXT
-**3–6 meses**
 
 - [ ] **002 · Microsoft Certified: Azure Fundamentals**
   - tipo: Certificação
@@ -55,7 +53,6 @@ atualizado: 2026-10-29
   - evidência:
 
 ## LATER
-**6–12 meses**
 
 - [ ] **005 · Kubernetes and Cloud Native Associate (KCNA)**
   - tipo: Certificação

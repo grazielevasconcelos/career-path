@@ -28,9 +28,9 @@ EDIT_URL = f"{REPO_URL}/edit/main/plan.md"
 PAGE_URL = "https://grazielevasconcelos.github.io/career-path/"
 
 LANES = {
-    "NOW": {"label": "Agora", "horizon": "0–3 meses", "class": "lane-now"},
-    "NEXT": {"label": "Próximo", "horizon": "3–6 meses", "class": "lane-next"},
-    "LATER": {"label": "Depois", "horizon": "6–12 meses", "class": "lane-later"},
+    "NOW": {"label": "Agora", "class": "lane-now"},
+    "NEXT": {"label": "Próximo", "class": "lane-next"},
+    "LATER": {"label": "Depois", "class": "lane-later"},
 }
 ALLOWED_FIELDS = {"tipo", "prioridade", "link", "tags", "prazo", "notas", "evidencia"}
 REQUIRED_FRONT = ("titulo", "nome", "cargo", "resumo", "atualizado")
@@ -396,7 +396,6 @@ def render_lane(lane_key: str, items: list[dict], start_index: int) -> str:
     <div class="lane-heading">
       <p class="lane-eyebrow">{esc(meta["label"])}</p>
       <h2>{lane_key}</h2>
-      <p class="lane-horizon">{esc(meta["horizon"])}</p>
     </div>
     <div class="lane-progress" aria-label="{completed} de {total} concluídos">
       <span class="lane-count">{completed} de {total}</span>

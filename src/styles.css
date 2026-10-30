@@ -694,12 +694,6 @@ button {
   line-height: 1;
 }
 
-.lane-horizon {
-  margin-top: 8px !important;
-  color: var(--ink-soft);
-  font-size: 13px;
-}
-
 .lane-progress {
   display: flex;
   flex-direction: column;

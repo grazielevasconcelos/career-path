@@ -12,9 +12,11 @@ O [`plan.md`](plan.md) é a única fonte de verdade. Um script em Python (soment
 plan.md  →  src/build.py  →  dist/  →  GitHub Actions  →  GitHub Pages
 ```
 
-- `NOW`: 0–3 meses
-- `NEXT`: 3–6 meses
-- `LATER`: 6–12 meses
+Os rótulos qualitativos indicam o estágio de cada raia, sem prazos fixos:
+
+- `NOW`: Agora
+- `NEXT`: Próximo
+- `LATER`: Depois
 
 A página é **somente leitura**: para marcar um item como concluído, edite o `plan.md`. O botão **Editar plano** abre o arquivo direto no editor do GitHub.
 
