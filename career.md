@@ -18,7 +18,7 @@ atualizado: 2026-10-30
   - notas: Certificação de entrada em cloud.
   - evidência:
 
-- [ ] **006 · IA generativa por dentro**
+- [x] **006 · IA generativa por dentro**
   - tipo: Curso
   - prioridade: Alta
   - link: https://andreribeirocoelho.github.io/learn-genai/pt/index.html
