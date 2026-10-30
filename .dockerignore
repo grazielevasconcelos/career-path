@@ -1,0 +1,11 @@
+.git
+.github
+dist
+.venv
+__pycache__
+*.pyc
+*.pyo
+.DS_Store
+.env
+.env.*
+prompts
