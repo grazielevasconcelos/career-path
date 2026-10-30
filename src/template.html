@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="author" content="{{NAME}}">
+  <meta name="theme-color" content="#f5f5f7" id="theme-color">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{PAGE_URL}}">
+  <link rel="canonical" href="{{PAGE_URL}}">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>{{TITLE}}</title>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("career-theme");
+        if (saved === "dark" || saved === "light") {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#timeline">Pular para a timeline</a>
+
+  <header class="site-nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="Plano de Carreira — início">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Plano de Carreira</span>
+      </a>
+      <nav class="nav-links" aria-label="Fases do plano">
+        <a href="#now">NOW</a>
+        <a href="#next">NEXT</a>
+        <a href="#later">LATER</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-button theme-toggle" type="button" aria-label="Ativar tema escuro" title="Ativar tema escuro" aria-pressed="false">
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="icon-button print-button" type="button" aria-label="Imprimir ou salvar em PDF" title="Imprimir ou salvar em PDF">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <a class="button button-primary edit-button" href="{{EDIT_URL}}" target="_blank" rel="noopener noreferrer">
+          <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="button-label">Editar plano</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal" style="--reveal-delay: 40ms">
+          <p class="eyebrow">Plano de carreira</p>
+          <h1 id="hero-title">{{NAME}}</h1>
+          <p class="hero-role">{{ROLE}}</p>
+          <p class="hero-summary">{{SUMMARY}}</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="{{EDIT_URL}}" target="_blank" rel="noopener noreferrer">
+              <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Editar plano
+            </a>
+            <button class="button button-secondary print-button" type="button">
+              <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Imprimir / PDF
+            </button>
+          </div>
+        </div>
+
+        <aside class="progress-card reveal" style="--reveal-delay: 140ms" aria-label="Progresso do plano">
+          <div class="progress-ring" role="img" aria-label="{{PERCENT}}% do plano concluído">
+            <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+              <circle class="ring-value" cx="60" cy="60" r="52" stroke-dasharray="{{RING_CIRCUMFERENCE}}" stroke-dashoffset="{{RING_OFFSET}}"></circle>
+            </svg>
+            <div class="ring-label"><strong>{{PERCENT}}%</strong><span>concluído</span></div>
+          </div>
+          <div class="progress-copy">
+            <p class="progress-label">Progresso geral</p>
+            <p class="progress-value"><strong>{{COMPLETED}}</strong> de {{TOTAL}} concluídos</p>
+            <p class="progress-updated">Atualizado em {{UPDATED_BR}}</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="filters-section" aria-label="Filtros do plano">
+      <div class="shell">
+        <div class="filters">
+          <div class="filter-group segmented" role="group" aria-label="Filtrar por tipo">
+            <button class="segmented-button is-active" type="button" data-type="all" aria-pressed="true">Todos</button>
+            {{TYPE_FILTERS}}
+          </div>
+          <div class="filter-group tag-filter" role="group" aria-label="Filtrar por tag">
+            {{TAG_FILTERS}}
+          </div>
+          <div class="search-box">
+            <svg class="icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.7"/>
+              <path d="m20 20-4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+            <label class="sr-only" for="search">Buscar no plano</label>
+            <input id="search" type="search" placeholder="Buscar por nome, nota ou tag..." autocomplete="off" spellcheck="false">
+          </div>
+          <button class="clear-button" id="clear-filters" type="button" hidden>Limpar filtros</button>
+          <p class="result-count" id="result-count" aria-live="polite">{{TOTAL_LABEL}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section" id="timeline" aria-label="Timeline do plano">
+      <div class="shell">
+        <div class="timeline">
+          {{LANES}}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>Plano de carreira de {{NAME}}.</p>
+      <div class="footer-links">
+        <a href="{{EDIT_URL}}" target="_blank" rel="noopener noreferrer">Editar plano</a>
+        <a href="{{REPO_URL}}" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+        <span>Atualizado em {{UPDATED_BR}}</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
