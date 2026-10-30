@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Preview local com rebuild automático ao salvar plan.md ou arquivos de src/."""
+"""Preview local com rebuild automático ao salvar career.md ou arquivos de src/."""
 
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ from pathlib import Path
 import build
 
 WATCHED = (
-    build.PLAN,
+    build.SOURCE,
     build.SRC / "template.html",
     build.SRC / "styles.css",
     build.SRC / "app.js",

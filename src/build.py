@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Gera a página estática do plano de carreira a partir de plan.md.
+"""Gera a página estática do plano de carreira a partir de career.md.
 
-O arquivo plan.md é a única fonte de verdade. Este script usa apenas a
+O arquivo career.md é a única fonte de verdade. Este script usa apenas a
 biblioteca padrão do Python: não há dependências para instalar.
 """
 
@@ -20,11 +20,11 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 DIST = ROOT / "dist"
-PLAN = ROOT / "plan.md"
+SOURCE = ROOT / "career.md"
 
 REPO = "grazielevasconcelos/career-path"
 REPO_URL = f"https://github.com/{REPO}"
-EDIT_URL = f"{REPO_URL}/edit/main/plan.md"
+EDIT_URL = f"{REPO_URL}/edit/main/career.md"
 PAGE_URL = "https://grazielevasconcelos.github.io/career-path/"
 
 LANES = {
@@ -63,7 +63,7 @@ CALENDAR_ICON = (
 
 
 class PlanError(Exception):
-    """Erro de conteúdo ou formato no plan.md."""
+    """Erro de conteúdo ou formato no career.md."""
 
 
 def normalize_key(value: str) -> str:
@@ -83,7 +83,7 @@ def esc(value: str) -> str:
     return html.escape(value, quote=True)
 
 
-def read_plan_text(path: Path = PLAN) -> str:
+def read_plan_text(path: Path = SOURCE) -> str:
     try:
         return path.read_text(encoding="utf-8")
     except FileNotFoundError as exc:
@@ -93,7 +93,7 @@ def read_plan_text(path: Path = PLAN) -> str:
 def parse_front_matter(text: str) -> tuple[dict[str, str], list[tuple[int, str]]]:
     lines = text.splitlines()
     if not lines or lines[0].strip() != "---":
-        raise PlanError("O plan.md deve começar com um bloco de front matter delimitado por ---.")
+        raise PlanError("O career.md deve começar com um bloco de front matter delimitado por ---.")
 
     closing = None
     for index in range(1, len(lines)):

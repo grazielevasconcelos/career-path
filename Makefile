@@ -10,7 +10,7 @@ help: ## Mostra os comandos disponíveis
 build: ## Gera o site em dist/
 	$(PY) src/build.py
 
-check: build ## Valida o plan.md e o site gerado
+check: build ## Valida o career.md e o site gerado
 	$(PY) src/check.py
 
 test: check ## Atalho para build + validação

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Valida o plan.md e o site gerado em dist/ antes do deploy."""
+"""Valida o career.md e o site gerado em dist/ antes do deploy."""
 
 from __future__ import annotations
 
@@ -128,7 +128,7 @@ def main() -> int:
 
     completed_label = "1 concluído" if completed == 1 else f"{completed} concluídos"
     print(
-        f"OK: plan.md válido · {total} itens · {completed_label} · "
+        f"OK: career.md válido · {total} itens · {completed_label} · "
         f"site pronto em dist/"
     )
     return 0

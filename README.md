@@ -6,10 +6,10 @@ Plano de carreira de **Graziele Vasconcelos**, construído com o framework **NOW
 
 ## Como funciona
 
-O [`plan.md`](plan.md) é a única fonte de verdade. Um script em Python (somente biblioteca padrão) lê o Markdown e gera uma timeline estática em `dist/`. O GitHub Actions publica essa pasta no Pages a cada push na `main`.
+O [`career.md`](career.md) é a única fonte de verdade. Um script em Python (somente biblioteca padrão) lê o Markdown e gera uma timeline estática em `dist/`. O GitHub Actions publica essa pasta no Pages a cada push na `main`.
 
 ```text
-plan.md  →  src/build.py  →  dist/  →  GitHub Actions  →  GitHub Pages
+career.md  →  src/build.py  →  dist/  →  GitHub Actions  →  GitHub Pages
 ```
 
 Os rótulos qualitativos indicam o estágio de cada raia, sem prazos fixos:
@@ -18,7 +18,7 @@ Os rótulos qualitativos indicam o estágio de cada raia, sem prazos fixos:
 - `NEXT`: Próximo
 - `LATER`: Depois
 
-A página é **somente leitura**: para marcar um item como concluído, edite o `plan.md`. O botão **Editar plano** abre o arquivo direto no editor do GitHub.
+A página é **somente leitura**: para marcar um item como concluído, edite o `career.md`. O botão **Editar plano** abre o arquivo direto no editor do GitHub.
 
 ## Como editar
 
@@ -75,7 +75,7 @@ O card fica riscado, o contador geral e o contador da raia são atualizados auto
 
 1. Escolha a raia (`NOW`, `NEXT` ou `LATER`).
 2. Use o próximo ID disponível, com três dígitos.
-3. Copie o modelo comentado no fim do `plan.md`.
+3. Copie o modelo comentado no fim do `career.md`.
 4. Preencha `tipo` e `prioridade`; os demais campos são opcionais.
 5. Atualize a data do front matter.
 
@@ -87,7 +87,7 @@ Requisitos: Python 3.9+ e `make` (opcional).
 make run
 ```
 
-Abre em `http://127.0.0.1:8000`. O site é reconstruído ao salvar `plan.md` ou os arquivos de `src/`.
+Abre em `http://127.0.0.1:8000`. O site é reconstruído ao salvar `career.md` ou os arquivos de `src/`.
 
 Se a porta estiver ocupada, use `PORT=8001 make run`.
 
@@ -113,7 +113,7 @@ Na primeira vez, ative o Pages em **Settings → Pages → Build and deployment 
 Depois de qualquer edição:
 
 ```bash
-git add plan.md
+git add career.md
 git commit -m "Atualiza plano de carreira"
 git push origin main
 ```
@@ -124,7 +124,7 @@ O site é atualizado em alguns minutos.
 
 ```text
 .
-├── plan.md                       # fonte única do plano
+├── career.md                     # fonte única do plano
 ├── README.md
 ├── Makefile
 ├── src/
@@ -158,4 +158,4 @@ O site é atualizado em alguns minutos.
 | `prioridade ... deve ser` | Use `Alta`, `Média` ou `Baixa` |
 | `não é uma URL http(s) válida` | Corrija o `link` ou a `evidência` |
 
-O build mostra o número da linha com problema no `plan.md`.
+O build mostra o número da linha com problema no `career.md`.
