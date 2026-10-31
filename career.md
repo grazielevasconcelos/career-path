@@ -3,7 +3,7 @@ titulo: Plano de Carreira
 nome: Graziele Vasconcelos
 cargo: Platform Engineer / SRE
 resumo: Profissional em evolução para Platform Engineering/SRE, com foco em cloud, Kubernetes, infraestrutura como código e confiabilidade.
-atualizado: 2026-10-30
+atualizado: 2026-10-31
 ---
 
 # Plano de Carreira
