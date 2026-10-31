@@ -1,5 +1,7 @@
 # career-path
 
+![Capa do plano de carreira de Graziele Vasconcelos](assets/banner-readme.webp)
+
 Plano de carreira de **Graziele Vasconcelos**, construído com o framework
 **NOW / NEXT / LATER** e publicado no GitHub Pages.
 
@@ -77,6 +79,8 @@ O site é atualizado em alguns minutos.
 ├── career.md                     # fonte única do plano
 ├── README.md
 ├── AGENTS.md                     # guia para agentes de código
+├── assets/
+│   └── banner-readme.webp        # capa exibida no README
 ├── docs/
 │   ├── edicao.md                 # como editar o career.md
 │   ├── containers.md             # preview em Docker/Podman
