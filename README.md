@@ -76,6 +76,7 @@ O site é atualizado em alguns minutos.
 .
 ├── career.md                     # fonte única do plano
 ├── README.md
+├── AGENTS.md                     # guia para agentes de código
 ├── docs/
 │   ├── edicao.md                 # como editar o career.md
 │   ├── containers.md             # preview em Docker/Podman
