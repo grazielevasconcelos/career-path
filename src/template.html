@@ -12,6 +12,8 @@
   <meta property="og:url" content="{{PAGE_URL}}">
   <link rel="canonical" href="{{PAGE_URL}}">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/Inter-Variable.woff2" as="font"
+        type="font/woff2" crossorigin>
   <title>{{TITLE}}</title>
   <script>
     (function () {
@@ -145,10 +147,35 @@
       <div class="footer-links">
         <a href="{{EDIT_URL}}" target="_blank" rel="noopener noreferrer">Editar plano</a>
         <a href="{{REPO_URL}}" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+        <button class="footer-print-help" type="button" data-print-help>Como imprimir</button>
         <span>Atualizado em {{UPDATED_BR}}</span>
       </div>
     </div>
   </footer>
+
+  <dialog class="print-dialog" id="print-dialog"
+          aria-labelledby="print-dialog-title"
+          aria-describedby="print-dialog-desc">
+    <h2 id="print-dialog-title">Antes de imprimir</h2>
+    <p id="print-dialog-desc">
+      Ajuste as opções abaixo para o PDF sair com a melhor qualidade.
+    </p>
+    <ol class="print-dialog-steps">
+      <li>Escolha papel <strong>A4</strong>, orientação <strong>retrato</strong> e margens padrão.</li>
+      <li>Desmarque <strong>Cabeçalhos e rodapés</strong> para remover data e URL do navegador.</li>
+      <li>Marque <strong>Gráficos de fundo</strong> para manter as cores dos badges e raias.</li>
+      <li>No celular, use a opção <strong>Salvar como PDF</strong>.</li>
+    </ol>
+    <p class="print-dialog-summary" id="print-summary" aria-live="polite"></p>
+    <label class="print-dialog-skip">
+      <input type="checkbox" id="print-guide-skip">
+      Não mostrar este guia novamente
+    </label>
+    <div class="print-dialog-actions">
+      <button class="button button-secondary" type="button" id="print-cancel">Cancelar</button>
+      <button class="button button-primary" type="button" id="print-confirm">Abrir impressão</button>
+    </div>
+  </dialog>
 
   <script src="app.js" defer></script>
 </body>

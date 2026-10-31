@@ -173,8 +173,91 @@
     updateThemeUI();
   });
 
-  document.querySelectorAll(".print-button").forEach((button) => {
-    button.addEventListener("click", () => window.print());
+  const printButtons = [...document.querySelectorAll(".print-button")];
+  const printHelpButtons = [...document.querySelectorAll("[data-print-help]")];
+  const printDialog = document.getElementById("print-dialog");
+  const printSummary = document.getElementById("print-summary");
+  const printConfirm = document.getElementById("print-confirm");
+  const printCancel = document.getElementById("print-cancel");
+  const printSkip = document.getElementById("print-guide-skip");
+  const PRINT_GUIDE_KEY = "career-print-guide";
+
+  function printGuideDismissed() {
+    try {
+      return localStorage.getItem(PRINT_GUIDE_KEY) === "1";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function savePrintGuidePreference(hidden) {
+    try {
+      if (hidden) localStorage.setItem(PRINT_GUIDE_KEY, "1");
+      else localStorage.removeItem(PRINT_GUIDE_KEY);
+    } catch (error) {
+      /* localStorage pode estar indisponível */
+    }
+  }
+
+  function updatePrintSummary() {
+    if (!printSummary) return;
+    const total = cards.length;
+    const visible = cards.filter(
+      (card) => !card.classList.contains("is-hidden")
+    ).length;
+
+    if (visible === 0) {
+      printSummary.textContent =
+        "Nenhum item visível com os filtros atuais. Ajuste os filtros para imprimir.";
+    } else if (isFiltering()) {
+      printSummary.textContent =
+        `Serão impressos ${visible} de ${total} itens (visão filtrada).`;
+    } else {
+      printSummary.textContent =
+        `Serão impressos todos os ${total} itens do plano.`;
+    }
+
+    if (printConfirm) printConfirm.disabled = visible === 0;
+  }
+
+  function openPrintGuide() {
+    if (!printDialog || typeof printDialog.showModal !== "function") {
+      window.print();
+      return;
+    }
+    updatePrintSummary();
+    if (printSkip) printSkip.checked = printGuideDismissed();
+    if (!printDialog.open) printDialog.showModal();
+  }
+
+  function requestPrint(forceGuide = false) {
+    if (!forceGuide && printGuideDismissed()) {
+      window.print();
+      return;
+    }
+    openPrintGuide();
+  }
+
+  printButtons.forEach((button) => {
+    button.addEventListener("click", () => requestPrint());
+  });
+
+  printHelpButtons.forEach((button) => {
+    button.addEventListener("click", () => requestPrint(true));
+  });
+
+  printConfirm?.addEventListener("click", () => {
+    savePrintGuidePreference(Boolean(printSkip?.checked));
+    if (printDialog?.open) printDialog.close();
+    window.print();
+  });
+
+  printCancel?.addEventListener("click", () => {
+    if (printDialog?.open) printDialog.close();
+  });
+
+  window.addEventListener("beforeprint", () => {
+    if (printDialog?.open) printDialog.close();
   });
 
   readURL();

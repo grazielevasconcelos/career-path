@@ -460,11 +460,17 @@ def build() -> tuple[dict, int, int]:
     if leftovers:
         raise PlanError(f"Placeholders não substituídos: {', '.join(leftovers)}")
 
+    font_dir = SRC / "fonts"
+    if not font_dir.is_dir():
+        raise PlanError("Pasta src/fonts ausente. Adicione a fonte Inter.")
+
     DIST.mkdir(parents=True, exist_ok=True)
     (DIST / "index.html").write_text(template, encoding="utf-8")
     shutil.copy2(SRC / "styles.css", DIST / "styles.css")
     shutil.copy2(SRC / "app.js", DIST / "app.js")
     shutil.copy2(SRC / "favicon.svg", DIST / "favicon.svg")
+    shutil.copytree(font_dir, DIST / "fonts", dirs_exist_ok=True)
+
     return plan, total, completed
 
 

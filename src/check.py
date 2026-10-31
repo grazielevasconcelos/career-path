@@ -9,7 +9,13 @@ from html.parser import HTMLParser
 
 import build
 
-REQUIRED_FILES = ("index.html", "styles.css", "app.js", "favicon.svg")
+REQUIRED_FILES = (
+    "index.html",
+    "styles.css",
+    "app.js",
+    "favicon.svg",
+    "fonts/Inter-Variable.woff2",
+)
 
 
 class DocumentParser(HTMLParser):
@@ -72,7 +78,14 @@ def main() -> int:
         return fail("O HTML não referencia styles.css.")
     if "app.js" not in parser.scripts:
         return fail("O HTML não referencia app.js.")
+    if "print-dialog" not in parser.ids:
+        return fail("O guia de impressão não foi gerado no HTML.")
 
+    css_text = (build.DIST / "styles.css").read_text(encoding="utf-8")
+    if "@font-face" not in css_text:
+        return fail("styles.css não declara a fonte Inter (@font-face).")
+    if "@media print" not in css_text:
+        return fail("styles.css não contém regras de impressão (@media print).")
     items = [item for lane in build.LANES for item in plan["lanes"][lane]]
     total = len(items)
     completed = sum(1 for item in items if item["done"])
@@ -122,7 +135,7 @@ def main() -> int:
     if 'id="clear-filters"' not in html_text:
         return fail("O botão de limpar filtros não foi gerado.")
 
-    for name in ("styles.css", "app.js", "favicon.svg"):
+    for name in ("styles.css", "app.js", "favicon.svg", "fonts/Inter-Variable.woff2"):
         if (build.DIST / name).stat().st_size == 0:
             return fail(f"Arquivo vazio em dist/: {name}.")
 
