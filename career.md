@@ -53,7 +53,7 @@ atualizado: 2026-10-31
   - evidência:
 
 ## LATER
-
+<!--
 - [ ] **005 · Kubernetes and Cloud Native Associate (KCNA)**
   - tipo: Certificação
   - prioridade: Baixa
@@ -61,6 +61,7 @@ atualizado: 2026-10-31
   - tags: devops, kubernetes, containers, iac
   - notas: Certificação da CNCF.
   - evidência:
+-->
 
 <!--
 Modelo para novos itens. Copie o bloco, troque o ID e preencha os campos.
