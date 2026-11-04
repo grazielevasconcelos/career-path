@@ -10,6 +10,7 @@ atualizado: 2026-11-02
 
 ## NOW
 
+<!--
 - [ ] **001 · AWS Certified Cloud Practitioner**
   - tipo: Certificação
   - prioridade: Alta
@@ -17,7 +18,7 @@ atualizado: 2026-11-02
   - tags: cloud, aws, amazon
   - notas: Certificação de entrada em cloud.
   - evidência:
-
+-->
 - [x] **006 · IA generativa por dentro**
   - tipo: Curso
   - prioridade: Alta
@@ -36,6 +37,15 @@ atualizado: 2026-11-02
 
 ## NEXT
 
+- [ ] **001 · AWS Certified Cloud Developer**
+  - tipo: Certificação
+  - prioridade: Alta
+  - link: https://aws.amazon.com/pt/certification/certified-developer-associate//
+  - tags: cloud, aws, amazon
+  - notas: Certificação de entrada em cloud.
+  - evidência:
+
+<!--
 - [ ] **002 · Microsoft Certified: Azure Fundamentals**
   - tipo: Certificação
   - prioridade: Média
@@ -51,9 +61,9 @@ atualizado: 2026-11-02
   - tags: devops, containers, iac
   - notas: Curso da LinuxTips.
   - evidência:
-
+-->
 ## LATER
-
+<!--
 - [ ] **005 · Kubernetes and Cloud Native Associate (KCNA)**
   - tipo: Certificação
   - prioridade: Baixa
@@ -62,7 +72,7 @@ atualizado: 2026-11-02
   - notas: Certificação da CNCF.
   - evidência:
 
-<!--
+
 Modelo para novos itens. Copie o bloco, troque o ID e preencha os campos.
 
 - [ ] **007 · Nome do item**
