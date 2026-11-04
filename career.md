@@ -42,7 +42,7 @@ atualizado: 2026-11-02
   - prioridade: Alta
   - link: https://aws.amazon.com/pt/certification/certified-developer-associate//
   - tags: cloud, aws, amazon
-  - notas: Certificação de entrada em cloud.
+  - notas: Certificação de developer em cloud.
   - evidência:
 
 <!--
