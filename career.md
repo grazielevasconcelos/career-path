@@ -10,15 +10,6 @@ atualizado: 2026-11-05
 
 ## NOW
 
-<!--
-- [ ] **001 · AWS Certified Cloud Practitioner**
-  - tipo: Certificação
-  - prioridade: Alta
-  - link: https://aws.amazon.com/pt/certification/certified-cloud-practitioner/
-  - tags: cloud, aws, amazon
-  - notas: Certificação de entrada em cloud.
-  - evidência:
--->
 - [x] **006 · IA generativa por dentro**
   - tipo: Curso
   - prioridade: Alta
@@ -45,25 +36,8 @@ atualizado: 2026-11-05
   - notas: Certificação de developer em cloud.
   - evidência:
 
-<!--
-- [ ] **002 · Microsoft Certified: Azure Fundamentals**
-  - tipo: Certificação
-  - prioridade: Média
-  - link: https://learn.microsoft.com/pt-br/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification
-  - tags: cloud, azure, microsoft
-  - notas: Certificação de entrada em Azure.
-  - evidência:
-
-- [ ] **004 · Descomplicando o Terraform**
-  - tipo: Curso
-  - prioridade: Média
-  - link: https://linuxtips.io/treinamento/descomplicando-o-terraform/
-  - tags: devops, containers, iac
-  - notas: Curso da LinuxTips.
-  - evidência:
--->
 ## PARKING LOT
-<!--
+
 - [ ] **005 · Kubernetes and Cloud Native Associate (KCNA)**
   - tipo: Certificação
   - prioridade: Baixa
@@ -72,7 +46,39 @@ atualizado: 2026-11-05
   - notas: Certificação da CNCF.
   - evidência:
 
+- [ ] **002 · Microsoft Certified: Azure**
+  - tipo: Certificação
+  - prioridade: Baixa
+  - link:
+  - tags: cloud, azure, microsoft
+  - notas: Certificação de entrada em Azure.
+  - evidência:
 
+- [ ] **004 · Descomplicando o Terraform**
+  - tipo: Curso
+  - prioridade: Baixa
+  - link: https://linuxtips.io/treinamento/descomplicando-o-terraform/
+  - tags: devops, containers, iac
+  - notas: Curso da LinuxTips.
+  - evidência:
+
+- [ ] **007 · Observabilidade Datadog**
+  - tipo: Curso
+  - prioridade: Baixa
+  - link:
+  - tags: devops, observabilidade
+  - notas:
+  - evidência:
+
+- [ ] **008 · Certified Cloud Native Platform Engineer (CNPE)**
+  - tipo: Curso
+  - prioridade: Baixa
+  - link:
+  - tags: devops, cloud, sre
+  - notas:
+  - evidência:
+
+<!--
 Modelo para novos itens. Copie o bloco, troque o ID e preencha os campos.
 
 - [ ] **007 · Nome do item**
