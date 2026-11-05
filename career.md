@@ -38,10 +38,10 @@ atualizado: 2026-11-05
 
 ## PARKING LOT
 
-- [ ] **005 · Kubernetes and Cloud Native Associate (KCNA)**
+- [ ] **005 · Certified Kubernetes Administrator (CKA)**
   - tipo: Certificação
   - prioridade: Baixa
-  - link: https://www.cncf.io/training/certification/kcna/
+  - link: https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/
   - tags: devops, kubernetes, containers, iac
   - notas: Certificação da CNCF.
   - evidência:
