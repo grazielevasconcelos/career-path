@@ -3,7 +3,7 @@
 ## Project overview
 
 Static career-plan site for Graziele Vasconcelos, built with the NOW / NEXT /
-LATER framework and published to GitHub Pages.
+PARKING LOT framework and published to GitHub Pages.
 
 `career.md` is the single source of truth. A Python script (standard library
 only) parses the Markdown and generates a static timeline in `dist/`. GitHub
@@ -62,7 +62,7 @@ For Podman, pass `ENGINE=podman`; for standalone `podman-compose`, also pass
 
 - Keep the front matter block with `titulo`, `nome`, `cargo`, `resumo`, and
   `atualizado` (`YYYY-MM-DD`).
-- Keep the three lanes exactly as `## NOW`, `## NEXT`, and `## LATER`.
+- Keep the three lanes exactly as `## NOW`, `## NEXT`, and `## PARKING LOT`.
 - Item format: `- [ ] **001 · Name**`, with a unique ID of at least three digits.
 - Allowed fields: `tipo`, `prioridade`, `prazo`, `link`, `tags`, `notas`,
   `evidencia`. `tipo` is required; `prioridade` must be `Alta`, `Média`, or

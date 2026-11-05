@@ -28,9 +28,30 @@ EDIT_URL = f"{REPO_URL}/edit/main/career.md"
 PAGE_URL = "https://grazielevasconcelos.github.io/career-path/"
 
 LANES = {
-    "NOW": {"label": "Agora", "class": "lane-now"},
-    "NEXT": {"label": "Próximo", "class": "lane-next"},
-    "LATER": {"label": "Depois", "class": "lane-later"},
+    "NOW": {
+        "label": "Agora",
+        "heading": "NOW",
+        "horizon": "Nov/2026 a Mar/2027",
+        "class": "lane-now",
+    },
+    "NEXT": {
+        "label": "Próximo",
+        "heading": "NEXT",
+        "horizon": "Abr/2027 a Jul/2027",
+        "class": "lane-next",
+    },
+    "PARKING-LOT": {
+        "label": "No radar",
+        "heading": "PARKING LOT",
+        "horizon": "Ago/2027 a Dez/2027",
+        "class": "lane-parking-lot",
+    },
+}
+# Mapeia o título usado no career.md para a chave interna de cada raia.
+LANE_HEADINGS = {
+    "NOW": "NOW",
+    "NEXT": "NEXT",
+    "PARKING LOT": "PARKING-LOT",
 }
 ALLOWED_FIELDS = {"tipo", "prioridade", "link", "tags", "prazo", "notas", "evidencia"}
 REQUIRED_FRONT = ("titulo", "nome", "cargo", "resumo", "atualizado")
@@ -38,7 +59,7 @@ ITEM_RE = re.compile(
     r"^\s*-\s*\[([ xX])\]\s*\*\*(\d{3,})\s*(?:·|—|-|\|)\s*(.+?)\*\*\s*$"
 )
 FIELD_RE = re.compile(r"^\s{2,}-\s+([^:]+)\s*:\s*(.*)$")
-LANE_RE = re.compile(r"^##\s+(NOW|NEXT|LATER)\s*$", re.IGNORECASE)
+LANE_RE = re.compile(r"^##\s+(NOW|NEXT|PARKING\s+LOT)\s*$", re.IGNORECASE)
 
 CHECK_ICON = (
     '<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">'
@@ -224,11 +245,12 @@ def parse_plan(text: str) -> dict:
 
         lane_match = LANE_RE.match(line)
         if lane_match:
-            lane_name = lane_match.group(1).upper()
-            if lane_name in seen_lanes:
+            lane_name = re.sub(r"\s+", " ", lane_match.group(1).strip()).upper()
+            lane_key = LANE_HEADINGS[lane_name]
+            if lane_key in seen_lanes:
                 raise PlanError(f"Linha {lineno}: raia {lane_name} duplicada.")
-            seen_lanes.add(lane_name)
-            current_lane = lane_name
+            seen_lanes.add(lane_key)
+            current_lane = lane_key
             current_item = None
             continue
 
@@ -239,7 +261,7 @@ def parse_plan(text: str) -> dict:
                     f"Linha {lineno}: item inválido. Use: - [ ] **001 · Nome do item**"
                 )
             if current_lane is None:
-                raise PlanError(f"Linha {lineno}: item fora de uma raia NOW/NEXT/LATER.")
+                raise PlanError(f"Linha {lineno}: item fora de uma raia NOW/NEXT/PARKING LOT.")
             item = {
                 "id": item_match.group(2),
                 "name": item_match.group(3).strip(),
@@ -284,10 +306,11 @@ def parse_plan(text: str) -> dict:
             )
         # Títulos, subtítulos e texto de apoio são ignorados.
 
-    missing = [name for name in LANES if name not in seen_lanes]
+    missing = [name for name in LANE_HEADINGS if LANE_HEADINGS[name] not in seen_lanes]
     if missing:
         raise PlanError(
-            f"Raia(s) ausente(s): {', '.join(missing)}. Use ## NOW, ## NEXT e ## LATER."
+            f"Raia(s) ausente(s): {', '.join(missing)}. "
+            "Use ## NOW, ## NEXT e ## PARKING LOT."
         )
 
     ids: dict[str, int] = {}
@@ -395,7 +418,8 @@ def render_lane(lane_key: str, items: list[dict], start_index: int) -> str:
   <header class="lane-header">
     <div class="lane-heading">
       <p class="lane-eyebrow">{esc(meta["label"])}</p>
-      <h2>{lane_key}</h2>
+      <h2>{esc(meta["heading"])}</h2>
+      <p class="lane-horizon">{esc(meta["horizon"])}</p>
     </div>
     <div class="lane-progress" aria-label="{completed} de {total} concluídos">
       <span class="lane-count">{completed} de {total}</span>

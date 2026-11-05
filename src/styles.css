@@ -661,7 +661,7 @@ button {
   --lane-soft: var(--indigo-soft);
 }
 
-.lane-later {
+.lane-parking-lot {
   --lane: var(--teal);
   --lane-soft: var(--teal-soft);
 }
@@ -706,6 +706,12 @@ button {
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1;
+}
+
+.lane-horizon {
+  margin-top: 8px !important;
+  color: var(--ink-soft);
+  font-size: 13px;
 }
 
 .lane-progress {

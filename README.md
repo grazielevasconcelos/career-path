@@ -3,7 +3,7 @@
 ![Capa do plano de carreira de Graziele Vasconcelos](assets/banner-readme.webp)
 
 Plano de carreira de **Graziele Vasconcelos**, construído com o framework
-**NOW / NEXT / LATER** e publicado no GitHub Pages.
+**NOW / NEXT / PARKING LOT** e publicado no GitHub Pages.
 
 **Página:** https://grazielevasconcelos.github.io/career-path/
 
@@ -18,11 +18,12 @@ O [`career.md`](career.md) é a única fonte de verdade. Um script em Python (so
 career.md  →  src/build.py  →  dist/  →  GitHub Actions  →  GitHub Pages
 ```
 
-Os rótulos qualitativos indicam o estágio de cada raia, sem prazos fixos:
+Os rótulos qualitativos indicam o estágio de cada raia e os horizontes em meses
+orientam o prazo:
 
-- `NOW`: Agora
-- `NEXT`: Próximo
-- `LATER`: Depois
+- `NOW`: Agora — Nov/2026 a Mar/2027
+- `NEXT`: Próximo — Abr/2027 a Jul/2027
+- `PARKING LOT`: No radar — Ago/2027 a Dez/2027
 
 A página é **somente leitura**: para marcar um item como concluído, edite o
 `career.md` — o passo a passo está em [`docs/edicao.md`](docs/edicao.md). O botão

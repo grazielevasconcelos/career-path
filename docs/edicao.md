@@ -57,7 +57,7 @@ O card fica riscado, o contador geral e o contador da raia são atualizados auto
 
 ## Adicionar um item
 
-1. Escolha a raia (`NOW`, `NEXT` ou `LATER`).
+1. Escolha a raia (`NOW`, `NEXT` ou `PARKING LOT`).
 2. Use o próximo ID disponível, com três dígitos.
 3. Copie o modelo comentado no fim do `career.md`.
 4. Preencha `tipo` e `prioridade`; os demais campos são opcionais.
@@ -69,7 +69,7 @@ O card fica riscado, o contador geral e o contador da raia são atualizados auto
 |---|---|
 | `item inválido` | Confira o formato `- [ ] **001 · Nome**` |
 | `campo desconhecido` | Use apenas os campos da tabela acima |
-| `raia ausente` | Mantenha `## NOW`, `## NEXT` e `## LATER` |
+| `raia ausente` | Mantenha `## NOW`, `## NEXT` e `## PARKING LOT` |
 | `ID duplicado` | Cada item precisa de um ID único |
 | `prioridade ... deve ser` | Use `Alta`, `Média` ou `Baixa` |
 | `não é uma URL http(s) válida` | Corrija o `link` ou a `evidência` |

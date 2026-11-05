@@ -3,7 +3,7 @@ titulo: Plano de Carreira
 nome: Graziele Vasconcelos
 cargo: Platform Engineer / SRE
 resumo: Profissional em evolução para Platform Engineering/SRE, com foco em cloud, Kubernetes, infraestrutura como código e confiabilidade.
-atualizado: 2026-11-02
+atualizado: 2026-11-05
 ---
 
 # Plano de Carreira
@@ -62,7 +62,7 @@ atualizado: 2026-11-02
   - notas: Curso da LinuxTips.
   - evidência:
 -->
-## LATER
+## PARKING LOT
 <!--
 - [ ] **005 · Kubernetes and Cloud Native Associate (KCNA)**
   - tipo: Certificação
